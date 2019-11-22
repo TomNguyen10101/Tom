@@ -1,0 +1,75 @@
+username = []
+password = []
+new_old = input("Are you a new or old user (enter new or old): ")
+if new_old == "new":
+    crt_usnme = input("Create your username: ")
+    crt_password = input("Create your password: ")
+    x = username.append(crt_usnme)
+    y = password.append(crt_password)
+    while True:
+        ent_usnme = input("enter your username: ")
+        ent_pass = input("enter your password: ")
+        if ent_usnme in username:
+            if ent_pass in password:
+                break
+            else:
+                print("Invalid username/password. Please try again.")
+        else:
+             print("Invalid username/password. Please try again.")
+elif new_old == "old":
+    while True:
+        ent_usnme = input("enter your username: ")
+        ent_pass = input("enter your password: ")
+        if ent_usnme in username:
+            if ent_pass in password:
+                break
+            else:
+                print("Invalid username/password. Please try again.")
+        else:
+             print("Invalid username/password. Please try again.") 
+#Tom's Fastco Online 
+menu = ["Burger", "Chicken", "Nugget", "Fish And Chips", "Fries", "Coke"]
+def greeting():
+    cus_name = input("What is your name: ")
+    return cus_name.title()
+print("Welcome to Tom's Fastco, " + greeting())
+print("Today's menu we have: " , menu)
+while True:
+    order = input("What will you have today: ").title()
+    if order in menu:
+        if order.startswith("B"):
+            print("This will cost 3.99$ each")
+            break
+        elif order.startswith("Ch"):
+            print("This will cost 4.99$/piece")
+            break
+        elif order.startswith("Nu"):
+            print("This will cost 1.99$/piece")
+            break
+        elif order.startswith("Fi"):
+            print("This will cost 6.99$ each")
+            break
+        elif order.startswith("Fr"):
+            print("This will cost 1.35$ each")
+            break
+        elif order.startswith("Co"):
+            print("This will cost 1.99$ each")
+            break
+    else:
+        print("Not Available. Please Try Again")
+quant = int(input("How many do you want: "))
+if order == "burger":
+    price = quant*3.99
+elif order == "chicken":
+    price = quant*4.99
+elif order == "nugget":
+    price = quant*1.99
+elif order == "fish":
+    price = quant*6.99
+elif order =="fries":
+    price= quant*1.35
+else:
+    price = quant*1.99
+print("The total cost is",price,"$")
+pay_method = input("How do you want to pay (Credit card or Cash): ")
+print("Thank you for shopping. Have a great day.")
